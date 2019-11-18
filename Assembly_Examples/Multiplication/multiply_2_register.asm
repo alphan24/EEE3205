@@ -10,6 +10,7 @@ MOVWF AA;Wreg -> AA register (Move content of Wreg to the file register at AA Ad
 MOVLW 0xFC; 0x1F -> Wreg (move literal value 0x0C to Wreg)
 MOVWF BB;Wreg -> BB register (Move content of Wreg to the file register at AA Address)
 ;Do the following mathematical operation 2*AA*BB+3*BB
+;0x02*0x16*0xFC + 0x03*0xFC = 2E44
 MOVLW 0x02;0x02 -> Wreg (move literal value 0x02 to Wreg)
 MULWF AA;Wreg -> AA register (Move content of Wreg to the file register at AA Address)
 MOVFF PRODL,CCL;PRODL -> CCL
@@ -29,3 +30,4 @@ MOVF CCH,W;CCH -> Wreg
 ADDWF PRODL,W;Wreg + PRODL -> Wreg
 MOVWF CCH;Wreg -> CCH
 END
+
